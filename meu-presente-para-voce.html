@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Feliz 5 Meses, Meu amor!</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #ffebef;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin: 0;
+			}
+			.container {
+				width: 80%;
+				max-width: 600px;
+				background-color: #fff;
+				box-shadow: 0 4px 10px rgba(243, 90, 90, 0.2);
+				border-radius: 15px;
+				padding: 20px;
+				text-align: center;
+			}
+			h1 {
+				color: #ff6b6b;
+			}
+			.slide {
+				display: none;
+				animation: fadeIn 1s;
+			}
+			.active {
+				display: block;
+			}
+			.buttons {
+				margin-top: 20px;
+			}
+			.button {
+				background-color: #ff6b6b;
+				color: #fff;
+				border: none;
+				padding: 10px 20px;
+				border-radius: 5px;
+				cursor: pointer;
+				font-size: 16px;
+				transition: background-color 0.3s;
+			}
+			.button:hover {
+				background-color: #ff5252;
+			}
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Feliz 5 Meses, Meu Amor!</h1>
+			<div id="slides">
+				<div class="slide active">
+					<p>
+						Hoje comemoramos cinco meses de um amor lindo e único, esses meses foram
+						apenas o começo de um amor que cresce e se torna cada vez mais forte.
+						Obrigada por estar ao meu lado e por transformar meus dias em momentos de
+						pura felicidade.
+					</p>
+				</div>
+				<div class="slide">
+					<p>
+						Meu amor, meu coração transborda só de pensar em você. Cada sorriso seu,
+						cada abraço, cada palavra... Tudo em você me faz sentir a sorte de ter
+						encontrado alguém tão incrível para viver a vida de maneira tão leve. Você
+						ilumina a minha vida de um jeito que não tem explicação.
+					</p>
+				</div>
+				<div class="slide">
+					<p>
+						Eu te amo de maneira imensurável, Ana Beatriz. Esse sentimento é tão grande
+						que não cabe em palavras pois é algo que sinto no peito, que me faz querer
+						ser sempre a melhor pessoa para você e construir uma vida cheia de
+						felicidade e amor ao seu lado.
+					</p>
+				</div>
+				<div class="slide">
+					<p>
+						Imagino nós duas juntas por muito, muito tempo. Imagino nossos planos, nosso
+						futuro, nossas conquistas. Com você, sinto que o mundo é mais leve, e que
+						qualquer desafio vale a pena, porque sei que tenho a melhor pessoa ao meu
+						lado.
+					</p>
+				</div>
+				<div class="slide">
+					<p>
+						Obrigada por esses cinco meses ao seu lado, Meu Amor. Cada momento é único e
+						especial, e tudo o que quero é continuar escrevendo essa história de amor
+						contigo. Que esses meses sejam só o começo de uma vida inteira juntas! Eu Te
+						Amo.
+					</p>
+				</div>
+			</div>
+			<div class="buttons">
+				<button class="button" onclick="prevSlide()">Anterior</button>
+				<button class="button" onclick="nextSlide()">Próximo</button>
+			</div>
+		</div>
+
+		<script>
+			let currentSlide = 0;
+			const slides = document.querySelectorAll(".slide");
+
+			function showSlide(index) {
+				slides.forEach((slide, i) => {
+					slide.classList.remove("active");
+					if (i === index) {
+						slide.classList.add("active");
+					}
+				});
+			}
+
+			function nextSlide() {
+				currentSlide = (currentSlide + 1) % slides.length;
+				showSlide(currentSlide);
+			}
+
+			function prevSlide() {
+				currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+				showSlide(currentSlide);
+			}
+		</script>
+	</body>
+</html>
